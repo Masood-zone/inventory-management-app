@@ -2,7 +2,7 @@
   "name": "my-inventory-app",
   "productName": "my-inventory-app",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "This is a simple inventory management app built with Electron and React.",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -11,7 +11,13 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
-  "keywords": [],
+  "keywords": [
+    "electron",
+    "react-js",
+    "inventory",
+    "management",
+    "app"
+  ],
   "author": {
     "name": "masood",
     "email": "masoodacheampong@gmail.com"
