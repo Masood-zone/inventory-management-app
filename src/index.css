@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-base leading-normal text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900;
+    @apply transition-colors duration-300 ease-in-out;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+}
+
+@media print {
+  /* Hide everything except the receipt when printing */
+  body * {
+    visibility: hidden;
+  }
+
+  .receipt-container,
+  .receipt-container * {
+    visibility: visible;
+  }
+
+  .receipt-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Force black text on white background for printing */
+  .receipt-container {
+    color: black !important;
+    background-color: white !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Ensure borders are visible in print */
+  .receipt-container .border-gray-300,
+  .receipt-container .border-gray-600 {
+    border-color: #d1d5db !important;
+  }
+}
